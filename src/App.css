@@ -1,0 +1,171 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #1e293b;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    padding: 20px 6%;
+    background-color: #111827;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.navbar h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar span {
+    color: #60a5fa;
+}
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+
+.products-section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 45px 6%;
+}
+
+.section-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #111827;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 22px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+    border-color: #93c5fd;
+}
+
+/* Product Image */
+
+.product-image {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* Product Title */
+
+.product-card h2 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #334155;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Product Price */
+
+.product-price {
+    font-size: 19px;
+    font-weight: 700;
+    color: #2563eb;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+/* Add to Cart Button */
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 7px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1024px) {
+    .products-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-section {
+        padding: 30px 4%;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar h1 {
+        font-size: 23px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+}

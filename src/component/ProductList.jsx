@@ -1,13 +1,53 @@
-import {useState,useEffect} from "react";
+import { useState, useEffect } from "react";
 
-function ProductList(){
+function ProductList() {
 
-    return(
-        <div>
-            <h1>Our Products</h1>
+    const [products, setproducts] = useState([]);
+
+    useEffect(() => {
+        fetch("https://fakestoreapi.com/products")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                setproducts(data);
+            });
+    }, []);
+
+    return (
+        <div className="products-section">
+
+            <h2 className="section-title">Our Products</h2>
+
+            <div className="products-container">
+
+                {products.map((product) => (
+
+                    <div className="product-card" key={product.id}>
+
+                        <img
+                            className="product-image"
+                            src={product.image}
+                            alt={product.title}
+                        />
+
+                        <h2>{product.title}</h2>
+
+                        <p className="product-price">
+                            ${product.price}
+                        </p>
+
+                        <button className="add-to-cart-btn">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                ))}
+
+            </div>
+
         </div>
-    )
-
-
+    );
 }
+
 export default ProductList;
