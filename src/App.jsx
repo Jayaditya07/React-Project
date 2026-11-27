@@ -13,12 +13,7 @@ function App()
 
 
   return(
-    <div>
-      <h1>ShopCart</h1>
-      <h3>Cart : {cart.length}</h3>
-      <ProductList onAddtoCart={handelAddtoCart}/>
-      
-    </div>
+   
   )
 }
 
