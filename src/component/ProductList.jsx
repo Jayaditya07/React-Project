@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function ProductList() {
+function ProductList({ onAddtoCart }) {
 
     const [products, setproducts] = useState([]);
 
@@ -36,7 +36,8 @@ function ProductList() {
                             ${product.price}
                         </p>
 
-                        <button className="add-to-cart-btn">
+                        <button className="add-to-cart-btn" onClick={() => {onAddtoCart(product)}}
+                        >
                             Add to Cart
                         </button>
 
